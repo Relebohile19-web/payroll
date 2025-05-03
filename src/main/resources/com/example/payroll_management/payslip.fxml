@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="anchorpane" prefHeight="608.0" prefWidth="711.0"
+            style="-fx-background-color: linear-gradient(to bottom right, #ffe6f0, #f3e5f5);"
+            xmlns="http://javafx.com/javafx/20.0.2" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.example.payroll_management.PayslipController">
+    <!-- Sidebar -->
+    <AnchorPane fx:id="sidebar" prefHeight="608.0" prefWidth="150.0"
+                style="-fx-background-color: #ffffff; -fx-border-color: #f06292; -fx-border-width: 0 1 0 0;">
+        <Label fx:id="payroll" layoutX="10.0" layoutY="20.0" text="Payroll System"
+               style="-fx-text-fill: #d81b60; -fx-font-family: 'Georgia'; -fx-font-weight: bold; -fx-font-size: 20; -fx-effect: dropshadow(gaussian, #f06292, 5, 0.5, 0, 0);">
+            <font>
+                <Font size="20.0" />
+            </font>
+        </Label>
+        <Label fx:id="Dashboard" layoutX="20.0" layoutY="100.0" text="Dashboard"
+               style="-fx-text-fill: #ab47bc; -fx-font-family: 'Arial'; -fx-font-size: 16;" />
+        <Label fx:id="employees" layoutX="20.0" layoutY="140.0" text="Employees"
+               style="-fx-text-fill: #ab47bc; -fx-font-family: 'Arial'; -fx-font-size: 16;" />
+        <Label fx:id="calculator" layoutX="20.0" layoutY="180.0" text="Salary Calculator"
+               style="-fx-text-fill: #ab47bc; -fx-font-family: 'Arial'; -fx-font-size: 16;" />
+        <Label fx:id="payslip" layoutX="20.0" layoutY="220.0" text="Payslips"
+               style="-fx-text-fill: #ab47bc; -fx-font-family: 'Arial'; -fx-font-size: 16;" />
+        <Label fx:id="reports" layoutX="20.0" layoutY="260.0" text="Reports"
+               style="-fx-text-fill: #ab47bc; -fx-font-family: 'Arial'; -fx-font-size: 16;" />
+        <Label fx:id="adminUser" layoutX="20.0" layoutY="520.0" text="Admin User"
+               style="-fx-text-fill: #ab47bc; -fx-font-family: 'Arial'; -fx-font-size: 16;" />
+        <Button fx:id="logout" layoutX="20.0" layoutY="550.0" mnemonicParsing="false" text="Logout"
+                style="-fx-background-color: #f06292; -fx-text-fill: white; -fx-font-family: 'Arial'; -fx-font-size: 14; -fx-background-radius: 15; -fx-effect: dropshadow(gaussian, #d81b60, 5, 0.3, 0, 0);"
+                onMouseEntered="#handleLogoutMouseEntered"
+                onMouseExited="#handleLogoutMouseExited" />
+    </AnchorPane>
+
+    <!-- Main Content -->
+    <Label fx:id="Payslips" layoutX="180.0" layoutY="30.0" text="Payslips"
+           style="-fx-text-fill: #d81b60; -fx-font-family: 'Georgia'; -fx-font-weight: bold; -fx-font-size: 32; -fx-effect: dropshadow(gaussian, #f06292, 5, 0.5, 0, 0);">
+        <font>
+            <Font size="32.0" />
+        </font>
+    </Label>
+
+    <!-- Generate Payslip Form -->
+    <AnchorPane layoutX="180.0" layoutY="100.0" prefHeight="120.0" prefWidth="500.0"
+                style="-fx-background-color: #ffffff; -fx-border-color: #f06292; -fx-border-radius: 5;">
+        <Label layoutX="10.0" layoutY="10.0" text="Generate Payslip"
+               style="-fx-text-fill: #d81b60; -fx-font-family: 'Georgia'; -fx-font-size: 18;" />
+        <Label fx:id="employee" layoutX="10.0" layoutY="40.0" text="Employee"
+               style="-fx-text-fill: #d81b60; -fx-font-family: 'Georgia'; -fx-font-size: 14;" />
+        <ComboBox fx:id="employeeComboBox" layoutX="10.0" layoutY="60.0" prefWidth="150.0" />
+        <Label fx:id="month" layoutX="180.0" layoutY="40.0" text="Month"
+               style="-fx-text-fill: #d81b60; -fx-font-family: 'Georgia'; -fx-font-size: 14;" />
+        <TextField fx:id="payslipMonthField" layoutX="180.0" layoutY="60.0" prefHeight="25.0" prefWidth="150.0" promptText="e.g., July"
+                   style="-fx-border-color: #f06292; -fx-border-radius: 5;" />
+        <Label layoutX="350.0" layoutY="40.0" text="Year"
+               style="-fx-text-fill: #d81b60; -fx-font-family: 'Georgia'; -fx-font-size: 14;" />
+        <TextField fx:id="payslipYearField" layoutX="350.0" layoutY="60.0" prefHeight="25.0" prefWidth="80.0" promptText="e.g., 2025"
+                   style="-fx-border-color: #f06292; -fx-border-radius: 5;" />
+        <Button fx:id="generatePayslipButton" layoutX="350.0" layoutY="90.0" prefHeight="25.0" prefWidth="120.0" text="Generate Payslip"
+                style="-fx-background-color: #f06292; -fx-text-fill: white; -fx-font-family: 'Arial'; -fx-font-size: 14; -fx-background-radius: 15;" />
+    </AnchorPane>
+
+    <!-- Payslip Table -->
+    <TableView fx:id="payslipTable" layoutX="180.0" layoutY="240.0" prefHeight="350.0" prefWidth="500.0">
+        <columns>
+            <TableColumn fx:id="monthColumn" prefWidth="80.0" text="Month"
+                         style="-fx-alignment: CENTER; -fx-text-fill: #ab47bc; -fx-font-family: 'Arial'; -fx-font-size: 14;" />
+            <TableColumn fx:id="yearColumn" prefWidth="60.0" text="Year"
+                         style="-fx-alignment: CENTER; -fx-text-fill: #ab47bc; -fx-font-family: 'Arial'; -fx-font-size: 14;" />
+            <TableColumn fx:id="nameColumn" prefWidth="100.0" text="Name"
+                         style="-fx-alignment: CENTER; -fx-text-fill: #ab47bc; -fx-font-family: 'Arial'; -fx-font-size: 14;" />
+            <TableColumn fx:id="departmentColumn" prefWidth="100.0" text="Department"
+                         style="-fx-alignment: CENTER; -fx-text-fill: #ab47bc; -fx-font-family: 'Arial'; -fx-font-size: 14;" />
+            <TableColumn fx:id="positionColumn" prefWidth="100.0" text="Position"
+                         style="-fx-alignment: CENTER; -fx-text-fill: #ab47bc; -fx-font-family: 'Arial'; -fx-font-size: 14;" />
+            <TableColumn fx:id="joinDateColumn" prefWidth="80.0" text="Join Date"
+                         style="-fx-alignment: CENTER; -fx-text-fill: #ab47bc; -fx-font-family: 'Arial'; -fx-font-size: 14;" />
+            <TableColumn fx:id="basicSalaryColumn" prefWidth="100.0" text="Basic Salary"
+                         style="-fx-alignment: CENTER; -fx-text-fill: #ab47bc; -fx-font-family: 'Arial'; -fx-font-size: 14;" />
+            <TableColumn fx:id="netSalaryColumn" prefWidth="100.0" text="Net Salary"
+                         style="-fx-alignment: CENTER; -fx-text-fill: #ab47bc; -fx-font-family: 'Arial'; -fx-font-size: 14;" />
+            <TableColumn fx:id="workingHoursColumn" prefWidth="100.0" text="Working Hours"
+                         style="-fx-alignment: CENTER; -fx-text-fill: #ab47bc; -fx-font-family: 'Arial'; -fx-font-size: 14;" />
+            <TableColumn fx:id="overtimeHoursColumn" prefWidth="100.0" text="Overtime Hours"
+                         style="-fx-alignment: CENTER; -fx-text-fill: #ab47bc; -fx-font-family: 'Arial'; -fx-font-size: 14;" />
+            <TableColumn fx:id="actionColumn" prefWidth="100.0" text="Actions"
+                         style="-fx-alignment: CENTER; -fx-text-fill: #ab47bc; -fx-font-family: 'Arial'; -fx-font-size: 14;" />
+        </columns>
+    </TableView>
+</AnchorPane>

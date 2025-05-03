@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="anchorPane"
+            prefHeight="486.0" prefWidth="600.0"
+            style="-fx-background-color: linear-gradient(to bottom right, #ffe6f0, #f3e5f5);"
+            xmlns="http://javafx.com/javafx/20.0.2"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.example.payroll_management.SignupController">
+   <!-- Title Label -->
+   <Label fx:id="bestie" layoutX="100.0" layoutY="30.0" prefHeight="50.0" prefWidth="400.0"
+          text="Welcome Bestie!!!"
+          style="-fx-text-fill: #d81b60; -fx-font-family: 'Georgia'; -fx-font-weight: bold; -fx-font-size: 36; -fx-alignment: center; -fx-effect: dropshadow(gaussian, #f06292, 5, 0.5, 0, 0);">
+      <font>
+         <Font size="36.0" />
+      </font>
+   </Label>
+
+   <!-- Subtitle Label -->
+   <Label fx:id="here" layoutX="150.0" layoutY="90.0" prefHeight="25.0" prefWidth="300.0"
+          text="Are you new here? Register here to login!"
+          style="-fx-text-fill: #ab47bc; -fx-font-family: 'Arial'; -fx-font-size: 16; -fx-font-style: italic; -fx-alignment: center;" />
+
+   <!-- Form Fields -->
+   <TextField fx:id="fullName" layoutX="200.0" layoutY="130.0" prefHeight="30.0" prefWidth="200.0"
+              promptText="Full Name"
+              style="-fx-background-color: #ffffff; -fx-border-color: #f06292; -fx-border-radius: 5; -fx-font-family: 'Arial'; -fx-font-size: 14; -fx-text-fill: #333; -fx-prompt-text-fill: #ab47bc;" />
+
+   <TextField fx:id="Email" layoutX="200.0" layoutY="170.0" prefHeight="30.0" prefWidth="200.0"
+              promptText="Email"
+              style="-fx-background-color: #ffffff; -fx-border-color: #f06292; -fx-border-radius: 5; -fx-font-family: 'Arial'; -fx-font-size: 14; -fx-text-fill: #333; -fx-prompt-text-fill: #ab47bc;" />
+
+   <TextField fx:id="UserName" layoutX="200.0" layoutY="210.0" prefHeight="30.0" prefWidth="200.0"
+              promptText="Username"
+              style="-fx-background-color: #ffffff; -fx-border-color: #f06292; -fx-border-radius: 5; -fx-font-family: 'Arial'; -fx-font-size: 14; -fx-text-fill: #333; -fx-prompt-text-fill: #ab47bc;" />
+
+   <TextField fx:id="Password" layoutX="200.0" layoutY="250.0" prefHeight="30.0" prefWidth="200.0"
+              promptText="Password"
+              style="-fx-background-color: #ffffff; -fx-border-color: #f06292; -fx-border-radius: 5; -fx-font-family: 'Arial'; -fx-font-size: 14; -fx-text-fill: #333; -fx-prompt-text-fill: #ab47bc;" />
+
+   <TextField fx:id="confirm" layoutX="200.0" layoutY="290.0" prefHeight="30.0" prefWidth="200.0"
+              promptText="Confirm Password"
+              style="-fx-background-color: #ffffff; -fx-border-color: #f06292; -fx-border-radius: 5; -fx-font-family: 'Arial'; -fx-font-size: 14; -fx-text-fill: #333; -fx-prompt-text-fill: #ab47bc;" />
+
+   <!-- ChoiceBox -->
+   <ChoiceBox fx:id="choiceBox" layoutX="200.0" layoutY="330.0" prefHeight="30.0" prefWidth="200.0"
+              style="-fx-background-color: #ffffff; -fx-border-color: #f06292; -fx-border-radius: 5; -fx-font-family: 'Arial'; -fx-font-size: 14;" />
+
+   <!-- Buttons -->
+   <Button fx:id="signup" layoutX="200.0" layoutY="380.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="80.0"
+           text="Signup"
+           style="-fx-background-color: #f06292; -fx-text-fill: white; -fx-font-family: 'Arial'; -fx-font-size: 14; -fx-background-radius: 25; -fx-effect: dropshadow(gaussian, #d81b60, 5, 0.3, 0, 0);"
+           onMouseEntered="#handleSignupMouseEntered"
+           onMouseExited="#handleSignupMouseExited" />
+
+   <Button fx:id="login" layoutX="320.0" layoutY="380.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="80.0"
+           text="Login"
+           style="-fx-background-color: #ab47bc; -fx-text-fill: white; -fx-font-family: 'Arial'; -fx-font-size: 14; -fx-background-radius: 25; -fx-effect: dropshadow(gaussian, #8e24aa, 5, 0.3, 0, 0);"
+           onMouseEntered="#handleLoginMouseEntered"
+           onMouseExited="#handleLoginMouseExited" />
+</AnchorPane>

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="anchorpane" prefHeight="608.0" prefWidth="711.0"
+            style="-fx-background-color: linear-gradient(to bottom right, #ffe6f0, #f3e5f5);"
+            xmlns="http://javafx.com/javafx/20.0.2" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.example.payroll_management.EmployeeProfileController">
+    <!-- Sidebar -->
+    <AnchorPane fx:id="sidebar" prefHeight="608.0" prefWidth="150.0"
+                style="-fx-background-color: #ffffff; -fx-border-color: #f06292; -fx-border-width: 0 1 0 0;">
+        <Label fx:id="payroll" layoutX="10.0" layoutY="20.0" text="Payroll System"
+               style="-fx-text-fill: #d81b60; -fx-font-family: 'Georgia'; -fx-font-weight: bold; -fx-font-size: 20; -fx-effect: dropshadow(gaussian, #f06292, 5, 0.5, 0, 0);">
+            <font>
+                <Font size="20.0" />
+            </font>
+        </Label>
+        <Label fx:id="dashboard" layoutX="20.0" layoutY="100.0" text="Dashboard"
+               style="-fx-text-fill: #ab47bc; -fx-font-family: 'Arial'; -fx-font-size: 16;" />
+        <Label fx:id="myprofile" layoutX="20.0" layoutY="140.0" text="My Profile"
+               style="-fx-text-fill: #ab47bc; -fx-font-family: 'Arial'; -fx-font-size: 16;" />
+        <Label fx:id="payslip" layoutX="20.0" layoutY="180.0" text="Payslips"
+               style="-fx-text-fill: #ab47bc; -fx-font-family: 'Arial'; -fx-font-size: 16;" />
+        <Label fx:id="userLabel" layoutX="20.0" layoutY="520.0" text="Employee"
+               style="-fx-text-fill: #ab47bc; -fx-font-family: 'Arial'; -fx-font-size: 16;" />
+    </AnchorPane>
+
+    <!-- Main Content -->
+    <Label fx:id="profileTitle" layoutX="180.0" layoutY="30.0" text="Dashboard"
+           style="-fx-text-fill: #d81b60; -fx-font-family: 'Georgia'; -fx-font-weight: bold; -fx-font-size: 32; -fx-effect: dropshadow(gaussian, #f06292, 5, 0.5, 0, 0);">
+        <font>
+            <Font size="32.0" />
+        </font>
+    </Label>
+
+    <!-- Logout Button -->
+    <Button fx:id="logout" layoutX="620.0" layoutY="30.0" mnemonicParsing="false" text="Logout"
+            style="-fx-background-color: #f06292; -fx-text-fill: white; -fx-font-family: 'Arial'; -fx-font-size: 14; -fx-background-radius: 15; -fx-effect: dropshadow(gaussian, #d81b60, 5, 0.3, 0, 0);"
+            onMouseEntered="#handleLogoutMouseEntered"
+            onMouseExited="#handleLogoutMouseExited" />
+
+    <!-- Salary Cards -->
+    <AnchorPane layoutX="180.0" layoutY="100.0" prefHeight="100.0" prefWidth="500.0">
+        <AnchorPane layoutX="0.0" layoutY="0.0" prefHeight="100.0" prefWidth="150.0"
+                    style="-fx-background-color: #ffffff; -fx-border-color: #f06292; -fx-border-radius: 5;">
+            <Label layoutX="10.0" layoutY="10.0" text="Your Basic Salary"
+                   style="-fx-text-fill: #d81b60; -fx-font-family: 'Georgia'; -fx-font-size: 16;" />
+            <Label fx:id="basicSalary" layoutX="10.0" layoutY="40.0" text="R,000"
+                   style="-fx-text-fill: #ab47bc; -fx-font-family: 'Arial'; -fx-font-size: 24; -fx-font-weight: bold;" />
+        </AnchorPane>
+        <AnchorPane layoutX="175.0" layoutY="0.0" prefHeight="100.0" prefWidth="150.0"
+                    style="-fx-background-color: #ffffff; -fx-border-color: #f06292; -fx-border-radius: 5;">
+            <Label layoutX="10.0" layoutY="10.0" text="Working Hours"
+                   style="-fx-text-fill: #d81b60; -fx-font-family: 'Georgia'; -fx-font-size: 16;" />
+            <Label fx:id="workingHours" layoutX="10.0" layoutY="40.0" text="160"
+                   style="-fx-text-fill: #ab47bc; -fx-font-family: 'Arial'; -fx-font-size: 24; -fx-font-weight: bold;" />
+        </AnchorPane>
+        <AnchorPane layoutX="350.0" layoutY="0.0" prefHeight="100.0" prefWidth="150.0"
+                    style="-fx-background-color: #ffffff; -fx-border-color: #f06292; -fx-border-radius: 5;">
+            <Label layoutX="10.0" layoutY="10.0" text="Net Salary"
+                   style="-fx-text-fill: #d81b60; -fx-font-family: 'Georgia'; -fx-font-size: 16;" />
+            <Label fx:id="netSalary" layoutX="10.0" layoutY="40.0" text="R4,002"
+                   style="-fx-text-fill: #ab47bc; -fx-font-family: 'Arial'; -fx-font-size: 24; -fx-font-weight: bold;" />
+        </AnchorPane>
+    </AnchorPane>
+
+    <!-- Your Information Section -->
+    <AnchorPane layoutX="180.0" layoutY="220.0" prefHeight="200.0" prefWidth="500.0"
+                style="-fx-background-color: #ffffff; -fx-border-color: #f06292; -fx-border-radius: 5;">
+        <Label layoutX="10.0" layoutY="10.0" text="Your Information"
+               style="-fx-text-fill: #d81b60; -fx-font-family: 'Georgia'; -fx-font-size: 20; -fx-font-weight: bold;" />
+        <Label layoutX="10.0" layoutY="40.0" text="Employee ID"
+               style="-fx-text-fill: #ab47bc; -fx-font-family: 'Arial'; -fx-font-size: 14;" />
+        <Label fx:id="employeeId" layoutX="150.0" layoutY="40.0" text="1001"
+               style="-fx-text-fill: #ab47bc; -fx-font-family: 'Arial'; -fx-font-size: 14;" />
+        <Label layoutX="10.0" layoutY="70.0" text="Department"
+               style="-fx-text-fill: #ab47bc; -fx-font-family: 'Arial'; -fx-font-size: 14;" />
+        <Label fx:id="department" layoutX="150.0" layoutY="70.0" text="Engineering"
+               style="-fx-text-fill: #ab47bc; -fx-font-family: 'Arial'; -fx-font-size: 14;" />
+        <Label layoutX="10.0" layoutY="100.0" text="Position"
+               style="-fx-text-fill: #ab47bc; -fx-font-family: 'Arial'; -fx-font-size: 14;" />
+        <Label fx:id="position" layoutX="150.0" layoutY="100.0" text="Software Developer"
+               style="-fx-text-fill: #ab47bc; -fx-font-family: 'Arial'; -fx-font-size: 14;" />
+        <Label layoutX="10.0" layoutY="130.0" text="Join Date"
+               style="-fx-text-fill: #ab47bc; -fx-font-family: 'Arial'; -fx-font-size: 14;" />
+        <Label fx:id="joinDate" layoutX="150.0" layoutY="130.0" text="1/14/2022"
+               style="-fx-text-fill: #ab47bc; -fx-font-family: 'Arial'; -fx-font-size: 14;" />
+    </AnchorPane>
+</AnchorPane>

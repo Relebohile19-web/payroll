@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane fx:id="anchorPane" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/20.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.payroll_management.Admin_dashboardController">
+   <!-- Sidebar -->
+   <AnchorPane fx:id="sidebar" layoutX="0.0" layoutY="0.0" prefHeight="400.0" prefWidth="150.0" style="-fx-background-color: #ffe6f0;">
+      <Label fx:id="appName" layoutX="10.0" layoutY="20.0" text="Salary Swift" style="-fx-font-family: 'Georgia'; -fx-font-size: 20; -fx-font-weight: bold; -fx-text-fill: #d81b60;" />
+      <Label fx:id="dashboard" layoutX="10.0" layoutY="80.0" text="Dashboard" style="-fx-font-family: 'Arial'; -fx-font-size: 16; -fx-text-fill: #d81b60;" />
+      <Label fx:id="manageEmployees" layoutX="10.0" layoutY="120.0" text="Manage Employees" style="-fx-font-family: 'Arial'; -fx-font-size: 16; -fx-text-fill: #d81b60;" />
+      <Label fx:id="payrollReports" layoutX="10.0" layoutY="160.0" text="Payroll Reports" style="-fx-font-family: 'Arial'; -fx-font-size: 16; -fx-text-fill: #d81b60;" />
+      <Button fx:id="logout" layoutX="10.0" layoutY="350.0" prefHeight="30.0" prefWidth="100.0" text="Logout" style="-fx-background-color: #e91e63; -fx-text-fill: white; -fx-font-family: 'Arial'; -fx-font-size: 14; -fx-background-radius: 15;" />
+   </AnchorPane>
+
+   <!-- Manage Employees Section -->
+   <TextField fx:id="empIdField" layoutX="160.0" layoutY="50.0" prefHeight="30.0" prefWidth="200.0" promptText="Employee ID" visible="false" style="-fx-border-color: #f06292; -fx-border-radius: 5;" />
+   <TextField fx:id="empNameField" layoutX="160.0" layoutY="90.0" prefHeight="30.0" prefWidth="200.0" promptText="Name" visible="false" style="-fx-border-color: #f06292; -fx-border-radius: 5;" />
+   <TextField fx:id="empDeptField" layoutX="160.0" layoutY="130.0" prefHeight="30.0" prefWidth="200.0" promptText="Department" visible="false" style="-fx-border-color: #f06292; -fx-border-radius: 5;" />
+   <TextField fx:id="empPositionField" layoutX="160.0" layoutY="170.0" prefHeight="30.0" prefWidth="200.0" promptText="Position" visible="false" style="-fx-border-color: #f06292; -fx-border-radius: 5;" />
+   <DatePicker fx:id="empJoinDatePicker" layoutX="160.0" layoutY="210.0" prefHeight="30.0" prefWidth="200.0" promptText="Join Date" visible="false" style="-fx-border-color: #f06292; -fx-border-radius: 5;" />
+   <TextField fx:id="empSalaryField" layoutX="160.0" layoutY="250.0" prefHeight="30.0" prefWidth="200.0" promptText="Basic Salary" visible="false" style="-fx-border-color: #f06292; -fx-border-radius: 5;" />
+   <TextField fx:id="empHoursField" layoutX="160.0" layoutY="290.0" prefHeight="30.0" prefWidth="200.0" promptText="Working Hours" visible="false" style="-fx-border-color: #f06292; -fx-border-radius: 5;" />
+   <Button fx:id="addEmployeeButton" layoutX="380.0" layoutY="290.0" prefHeight="30.0" prefWidth="100.0" text="Add Employee" visible="false" style="-fx-background-color: #e91e63; -fx-text-fill: white; -fx-font-family: 'Arial'; -fx-font-size: 14; -fx-background-radius: 15;" />
+
+   <!-- Payroll Reports Section -->
+   <ComboBox fx:id="employeeComboBox" layoutX="160.0" layoutY="50.0" prefHeight="30.0" prefWidth="200.0" promptText="Select Employee" visible="false" style="-fx-border-color: #f06292; -fx-border-radius: 5;" />
+   <TextField fx:id="payslipMonthField" layoutX="160.0" layoutY="90.0" prefHeight="30.0" prefWidth="200.0" promptText="Month (e.g., January)" visible="false" style="-fx-border-color: #f06292; -fx-border-radius: 5;" />
+   <TextField fx:id="payslipYearField" layoutX="160.0" layoutY="130.0" prefHeight="30.0" prefWidth="200.0" promptText="Year (e.g., 2025)" visible="false" style="-fx-border-color: #f06292; -fx-border-radius: 5;" />
+   <Button fx:id="generatePayslipButton" layoutX="380.0" layoutY="130.0" prefHeight="30.0" prefWidth="100.0" text="Generate Payslip" visible="false" style="-fx-background-color: #e91e63; -fx-text-fill: white; -fx-font-family: 'Arial'; -fx-font-size: 14; -fx-background-radius: 15;" />
+   <TableView fx:id="payslipTable" layoutX="160.0" layoutY="170.0" prefHeight="200.0" prefWidth="420.0" visible="false">
+      <columns>
+         <TableColumn fx:id="monthColumn" prefWidth="80.0" text="Month" />
+         <TableColumn fx:id="yearColumn" prefWidth="60.0" text="Year" />
+         <TableColumn fx:id="nameColumn" prefWidth="100.0" text="Name" />
+         <TableColumn fx:id="departmentColumn" prefWidth="100.0" text="Department" />
+         <TableColumn fx:id="positionColumn" prefWidth="100.0" text="Position" />
+         <TableColumn fx:id="joinDateColumn" prefWidth="80.0" text="Join Date" />
+         <TableColumn fx:id="basicSalaryColumn" prefWidth="100.0" text="Basic Salary" />
+         <TableColumn fx:id="workingHoursColumn" prefWidth="100.0" text="Working Hours" />
+      </columns>
+   </TableView>
+</AnchorPane>

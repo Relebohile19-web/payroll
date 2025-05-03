@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="anchorpane"
+            prefHeight="400.0" prefWidth="600.0"
+            style="-fx-background-color: linear-gradient(to bottom right, #ffe6f0, #f3e5f5);"
+            xmlns="http://javafx.com/javafx/20.0.2"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.example.payroll_management.HelloController">
+   <!-- Title Label -->
+   <Label fx:id="welcomeLabel" layoutX="100.0" layoutY="30.0" prefHeight="50.0" prefWidth="400.0"
+          text="Welcome back to Tasha's System!!"
+          style="-fx-text-fill: #d81b60; -fx-font-family: 'Georgia'; -fx-font-weight: bold; -fx-font-size: 28; -fx-alignment: center; -fx-effect: dropshadow(gaussian, #f06292, 5, 0.5, 0, 0);">
+      <font>
+         <Font size="28.0" />
+      </font>
+   </Label>
+
+   <!-- Form Fields -->
+   <TextField fx:id="usernameField" layoutX="200.0" layoutY="100.0" prefHeight="30.0" prefWidth="200.0"
+              promptText="Username"
+              style="-fx-background-color: #ffffff; -fx-border-color: #f06292; -fx-border-radius: 5; -fx-font-family: 'Arial'; -fx-font-size: 14; -fx-text-fill: #333; -fx-prompt-text-fill: #ab47bc;" />
+
+   <PasswordField fx:id="passwordField" layoutX="200.0" layoutY="140.0" prefHeight="30.0" prefWidth="200.0"
+                  promptText="Password"
+                  style="-fx-background-color: #ffffff; -fx-border-color: #f06292; -fx-border-radius: 5; -fx-font-family: 'Arial'; -fx-font-size: 14; -fx-text-fill: #333; -fx-prompt-text-fill: #ab47bc;" />
+
+   <!-- ComboBox -->
+   <ComboBox fx:id="roleComboBox" layoutX="200.0" layoutY="180.0" prefHeight="30.0" prefWidth="200.0"
+             style="-fx-background-color: #ffffff; -fx-border-color: #f06292; -fx-border-radius: 5; -fx-font-family: 'Arial'; -fx-font-size: 14;" />
+
+   <!-- Signup Prompt Label -->
+   <Label layoutX="150.0" layoutY="260.0" prefHeight="25.0" prefWidth="300.0"
+          text="Don't have an account?"
+          style="-fx-text-fill: #ab47bc; -fx-font-family: 'Arial'; -fx-font-size: 14; -fx-font-style: italic; -fx-alignment: center;" />
+
+   <!-- Buttons -->
+   <Button fx:id="signupButton" layoutX="200.0" layoutY="220.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="80.0"
+           text="Signup"
+           style="-fx-background-color: #f06292; -fx-text-fill: white; -fx-font-family: 'Arial'; -fx-font-size: 14; -fx-background-radius: 25; -fx-effect: dropshadow(gaussian, #d81b60, 5, 0.3, 0, 0);"
+           onMouseEntered="#handleSignupMouseEntered"
+           onMouseExited="#handleSignupMouseExited" />
+
+   <Button fx:id="loginButton" layoutX="320.0" layoutY="220.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="80.0"
+           text="Login"
+           style="-fx-background-color: #ab47bc; -fx-text-fill: white; -fx-font-family: 'Arial'; -fx-font-size: 14; -fx-background-radius: 25; -fx-effect: dropshadow(gaussian, #8e24aa, 5, 0.3, 0, 0);"
+           onMouseEntered="#handleLoginMouseEntered"
+           onMouseExited="#handleLoginMouseExited" />
+</AnchorPane>
